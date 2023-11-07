@@ -1,0 +1,51 @@
+﻿@model Lab_2.Models.Entities.Person
+@{
+    ViewBag.Title = "PersonDetails";
+}
+<h2>Участник опроса</h2>
+<h4>Person</h4>
+<hr />
+<div class="row" style="border: 5px solid red">
+    <div class="col-md-4" style="border: 4px solid blue">
+        <div class="row">
+            <div class="col-md-3">@Html.LabelFor(m => m.last_name) </div>
+            <div class="col-md-4">@Html.DisplayFor(m => m.last_name) </div>
+        </div>
+        <div class="row" style="border: 5px solid pink">
+            <div class="row">
+                <div class="col-md-3">@Html.LabelFor(m => m.age) </div>
+                <div class="col-md-4">@Html.DisplayFor(m => m.age) </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="border: 4px solid green">
+        <div class="row">
+            <div class="col-md-3">@Html.LabelFor(m => m.first_name) </div>
+            <div class="col-md-4">@Html.DisplayFor(m => m.first_name) </div>
+        </div>
+        <div class="row" style="border: 5px solid black">
+            <div class="row">
+                <div class="col-md-3">@Html.LabelFor(m => m.gender) </div>
+                <div class="col-md-4">@Html.DisplayFor(m => m.gender) </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="border: 4px solid yellow">
+        <div class="row">
+            <div class="col-md-3">@Html.LabelFor(m => m.patronymic) </div>
+            <div class="col-md-4">@Html.DisplayFor(m => m.patronymic) </div>
+        </div>
+        <div class="row" style="border: 5px solid grey">
+            <div class="row">
+                <div class="col-md-5">@Html.LabelFor(m => m.has_job) </div>
+                <div class="col-md-4">@Html.DisplayFor(m => m.has_job) </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Назад", "ListOfPeople")
+</p>
+
+

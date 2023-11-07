@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Nazarenko_WEBModelContainer" CdmEntityContainer="Nazarenko_WEBEntities">
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="Nazarenko_WEBModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="question_number" ColumnName="question_number" />
+          <ScalarProperty Name="person_ID" ColumnName="person_ID" />
+          <ScalarProperty Name="answer_time" ColumnName="answer_time" />
+          <ScalarProperty Name="answer__text" ColumnName="answer__text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="Nazarenko_WEBModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="has_job" ColumnName="has_job" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="Nazarenko_WEBModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="question_text" ColumnName="question_text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

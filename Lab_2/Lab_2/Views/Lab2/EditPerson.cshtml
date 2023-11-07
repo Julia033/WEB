@@ -1,0 +1,58 @@
+﻿@model Lab_2.Models.ViewModels.PersonVM
+
+@{
+    ViewBag.Title = "EditPerson";
+    List<Tuple<string, string>> Genders = ViewBag.Genders.Items;
+}
+
+<h2>Изменить данные</h2>
+
+@using (Html.BeginForm("EditPerson", "Lab2", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Участник опроса</h4>
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID)
+    <label for="last_name">Фамилия</label>
+    <input class="form-control text-box single-line" id="last_name" name="last_name" required type="text" value="@Model.last_name">
+
+    <label for="first_name">Имя</label>
+    <input class="form-control text-box single-line" id="first_name" name="first_name" required type="text" value="@Model.first_name">
+
+    <label for="patronymic">Отчество</label>
+    <input class="form-control text-box single-line" id="patronymic" name="patronymic" type="text" value="@Model.patronymic">
+    <label for="age">Возраст</label>
+    <input class="form-control text-box single-line" id="age" name="age" required type="number" value="@Model.age">
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.gender, htmlAttributes: new {@class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.gender, ViewBag.Genders as SelectList, new {@class="form-control"})
+            @Html.ValidationMessageFor(model => model.gender, "", new {@class="text-danger"})
+        </div>
+    </div>
+
+
+    <label for="has_job">Трудоустроен</label>
+    <input type="radio" id="has_job"> <br />
+    <br />
+
+    <label for="Birthday">Дата рождения</label>
+    <input class="form-control text-box single-line" data-val="true" data-val-date="Поле Дата рождения должно содержать дату" data-val-required="Требуется поле Дата рождения" id="Birthday" name="Birthday" type="date" value="" />
+
+    <label for="InsertDateTime">Дата и время добавления</label>
+    <input class="form-control text-box single-line" data-val="true" data-val-date="Поле Дата и время добавления должно содержать дату" data-val-required="Требуется поле Дата и время добавления" id="InsertDateTime" name="InsertDateTime" type="datetime-local" value="" />
+
+    <label for="WakeUpTime">Время подъема</label>
+    <input class="form-control text-box single-line" data-val="true" data-val-date="Поле Время подъема должно содержать дату" data-val-required="Требуется поле Время подъема" id="WakeUpTime" name="WakeUpTime" type="time" value="" />
+
+    <br />
+    <input type="submit" value="Отправить" />
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ListOfPeople")
+</div>
